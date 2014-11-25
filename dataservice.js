@@ -14,9 +14,9 @@ var dataservice = (function( $ ) {
       'route':null, 
       'method':"POST", 
       'data':null, 
-      'successCallback':function (data) {}, 
-      'completeCallback':function () {},
-      'failCallback':function () {},
+      'success':function (data) {}, 
+      'complete':function () {},
+      'error':function () {},
       'progressbar':$('#dataserviceProgressbar .progress-bar'),
       'async':true,
       'uploadProccess':function () {},
@@ -195,7 +195,7 @@ var dataservice = (function( $ ) {
       },
       'success': function(data) {
         ProgressOfTop();
-        options.successCallback(data); 
+        options.success(data); 
       },
       error: function (jqXHR,textStatus,errorThrown) {
 
@@ -208,12 +208,12 @@ var dataservice = (function( $ ) {
         continueQueue=true;
         if(options.addQueueOnError)
           addToQueue(preferredOptions);
-        options.failCallback();
+        options.error();
       },
       complete: function(){
         continueQueue=true;
         ProgressOfTop();
-        options.completeCallback();
+        options.complete();
       }
     }
 
