@@ -18,7 +18,7 @@ This object handles with progress of Ajax Requests and if you specify an Bootstr
 Just include file and start using it. You are going to like it.
 
 ###Usage 
-Very similar to `$.ajax`
+Very similar to `$.ajax()`
 
 ``` javascript
 dataservice
